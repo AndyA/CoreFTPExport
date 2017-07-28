@@ -11,7 +11,7 @@ use JSON ();
 use MIME::Base64;
 use Path::Class;
 
-use constant KEY    => 'hdfzpysvpzimorhk';
+use constant KEY    => 'hdfzpysvpzimorhk';    # Yup!
 use constant OUTDIR => "ftpconfig";
 
 my @site = ();

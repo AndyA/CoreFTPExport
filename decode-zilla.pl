@@ -11,7 +11,22 @@ use JSON ();
 use MIME::Base64;
 use HTML::Tiny;
 
-use constant KEY => 'hdfzpysvpzimorhk';
+=for ref
+
+Converts a CoreFTP site export into FileZilla XML format.
+
+I cleaned up the (slightly binary) CoreFTP dump file by running it
+through strings:
+
+  $ strings -1 < core-ftp > sites
+  $ perl decode-zilla.pl sites > FileZilla.xml
+
+It's possible that with a little more reverse engineering more of the
+FileZilla options could be populated with non-default values.
+
+=cut
+
+use constant KEY => 'hdfzpysvpzimorhk'; # Yup!
 
 my @site = ();
 for my $file (@ARGV) {
