@@ -20,6 +20,7 @@ for my $file (@ARGV) {
     next unless /^(\w+),(.*)/;
     my ( $key, $val ) = ( $1, $2 );
     push @site, {} if $key eq "Name";
+    next unless @site;
     $val = decrypt($val) if $key eq "PW";
     my $stash = $site[-1];
     $stash->{$key} = $val;
